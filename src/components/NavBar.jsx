@@ -17,7 +17,7 @@ const NavBar = () => {
       <ul className="hidden md:flex ml-auto">
         <li>Home</li>
         <li>Sobre</li>
-        <li>Skills</li>
+        <li>Habilidades</li>
         <li>Work</li>
         <li>Contact</li>
       </ul>
@@ -37,7 +37,7 @@ const NavBar = () => {
         >
           <li className="py-6 text-4xl">Home</li>
           <li className="py-6 text-4xl">Sobre</li>
-          <li className="py-6 text-4xl">Skills</li>
+          <li className="py-6 text-4xl">Habilidades</li>
           <li className="py-6 text-4xl">Work</li>
           <li className="py-6 text-4xl">Contact</li>
         </ul>
