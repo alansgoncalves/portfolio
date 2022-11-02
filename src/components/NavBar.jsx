@@ -18,8 +18,8 @@ const NavBar = () => {
         <li>Home</li>
         <li>Sobre</li>
         <li>Habilidades</li>
-        <li>Work</li>
-        <li>Contact</li>
+        <li>Projetos</li>
+        <li>Contato</li>
       </ul>
 
       {/* Hamburger */}
@@ -38,8 +38,8 @@ const NavBar = () => {
           <li className="py-6 text-4xl">Home</li>
           <li className="py-6 text-4xl">Sobre</li>
           <li className="py-6 text-4xl">Habilidades</li>
-          <li className="py-6 text-4xl">Work</li>
-          <li className="py-6 text-4xl">Contact</li>
+          <li className="py-6 text-4xl">Projetos</li>
+          <li className="py-6 text-4xl">Contato</li>
         </ul>
       </div>
       {/* Social Icons*/}
