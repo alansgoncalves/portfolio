@@ -128,7 +128,7 @@ const NavBar = () => {
               href="CV_Alan_Goncalves.pdf"
               download="CV Alan Goncalves.pdf"
             >
-              CV
+              Download CV
               <BsFillPersonLinesFill size={30} />
             </a>
           </li>
