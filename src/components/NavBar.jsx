@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes, FaGithub, FaLinkedin } from "react-icons/fa";
-import { HiOutlineMail } from "react-icons/hi";
-import { BsFillPersonLinesFill } from "react-icons/bs";
+import { BsFillPersonLinesFill, BsWhatsapp } from "react-icons/bs";
 import Logo from "../assets/logo.png";
 import { Link } from "react-scroll";
+import ReactWhatsapp from "react-whatsapp";
 
 const NavBar = () => {
   const [nav, setNav] = useState(false);
@@ -116,20 +116,20 @@ const NavBar = () => {
               Github <FaGithub size={30} />
             </a>
           </li>
-          <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#6fc2b0]">
-            <a
-              className="flex justify-between items-center w-full text-gray-300"
-              href="/"
-            >
-              Email <HiOutlineMail size={30} />
-            </a>
+          <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#1CD03F]">
+            <ReactWhatsapp number="+55 21981621029" style={{ display: "flex" }}>
+              WhatsApp&nbsp;&nbsp;
+            </ReactWhatsapp>
+            <BsWhatsapp size={30} />
           </li>
           <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#565f69]">
             <a
               className="flex justify-between items-center w-full text-gray-300"
-              href="/"
+              href="CV_Alan_Goncalves.pdf"
+              download="CV Alan Goncalves.pdf"
             >
-              CV <BsFillPersonLinesFill size={30} />
+              CV
+              <BsFillPersonLinesFill size={30} />
             </a>
           </li>
         </ul>
