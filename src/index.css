@@ -47,9 +47,17 @@
     display: none;
   }
 }
+.social-icon {
+  padding-top: 340px;
+  padding-bottom: 30px;
+}
 
 @media only screen and (max-width: 639px) {
-  /* .talk-form {
-    margin-top: 30px;
-  } */
+  .talk-form {
+    margin-top: 115px;
+  }
+
+  .contact-form {
+    padding-top: 429px;
+  }
 }
