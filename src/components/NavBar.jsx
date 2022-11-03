@@ -3,6 +3,7 @@ import { FaBars, FaTimes, FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import Logo from "../assets/logo.png";
+import { Link } from "react-scroll";
 
 const NavBar = () => {
   const [nav, setNav] = useState(false);
@@ -15,11 +16,31 @@ const NavBar = () => {
       </div>
       {/* Menu */}
       <ul className="hidden md:flex ml-auto">
-        <li>Home</li>
-        <li>Sobre</li>
-        <li>Habilidades</li>
-        <li>Projetos</li>
-        <li>Contato</li>
+        <li>
+          <Link to="home" smooth={true} duration={500}>
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link to="about" smooth={true} duration={500}>
+            Sobre
+          </Link>
+        </li>
+        <li>
+          <Link to="skills" smooth={true} duration={500}>
+            Habilidades
+          </Link>
+        </li>
+        <li>
+          <Link to="work" smooth={true} duration={500}>
+            Projetos
+          </Link>
+        </li>
+        <li>
+          <Link to="contact" smooth={true} duration={500}>
+            Contato
+          </Link>
+        </li>
       </ul>
 
       {/* Hamburger */}
@@ -35,11 +56,41 @@ const NavBar = () => {
               : "absolute top-0 left-0 w-full h-screen bg-[#0a192f] flex flex-col justify-center items-center"
           }
         >
-          <li className="py-6 text-4xl">Home</li>
-          <li className="py-6 text-4xl">Sobre</li>
-          <li className="py-6 text-4xl">Habilidades</li>
-          <li className="py-6 text-4xl">Projetos</li>
-          <li className="py-6 text-4xl">Contato</li>
+          <li className="py-6 text-4xl">
+            <Link onClick={handleClick} to="home" smooth={true} duration={500}>
+              Home
+            </Link>
+          </li>
+          <li className="py-6 text-4xl">
+            <Link onClick={handleClick} to="about" smooth={true} duration={500}>
+              Sobre
+            </Link>
+          </li>
+          <li className="py-6 text-4xl">
+            <Link
+              onClick={handleClick}
+              to="skills"
+              smooth={true}
+              duration={500}
+            >
+              Habilidades
+            </Link>
+          </li>
+          <li className="py-6 text-4xl">
+            <Link onClick={handleClick} to="work" smooth={true} duration={500}>
+              Projetos
+            </Link>
+          </li>
+          <li className="py-6 text-4xl">
+            <Link
+              onClick={handleClick}
+              to="contact"
+              smooth={true}
+              duration={500}
+            >
+              Contato
+            </Link>
+          </li>
         </ul>
       </div>
       {/* Social Icons*/}
@@ -58,7 +109,9 @@ const NavBar = () => {
           <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#333333]">
             <a
               className="flex justify-between items-center w-full text-gray-300"
-              href="/"
+              href="https://github.com/alansgoncalves"
+              target="_blank"
+              rel="noreferrer"
             >
               Github <FaGithub size={30} />
             </a>
@@ -76,7 +129,7 @@ const NavBar = () => {
               className="flex justify-between items-center w-full text-gray-300"
               href="/"
             >
-              Resume <BsFillPersonLinesFill size={30} />
+              CV <BsFillPersonLinesFill size={30} />
             </a>
           </li>
         </ul>

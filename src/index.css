@@ -28,3 +28,16 @@
     hsla(242, 74%, 61%, 0.8)
   ) !important;
 }
+
+.skills,
+.work {
+  margin-top: 87px;
+}
+
+.contact {
+  margin-top: 87px;
+}
+
+.form-contact {
+  margin-bottom: 80px;
+}
