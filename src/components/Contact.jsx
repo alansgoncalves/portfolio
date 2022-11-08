@@ -2,8 +2,48 @@ import React from "react";
 import { AiOutlineMail } from "react-icons/ai";
 import { BsTelephone } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
+import emailjs from "emailjs-com";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const Contact = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [isValid, setValid] = useState(false);
+
+  const validate = () => {
+    return name.length && email.length && message.length;
+  };
+
+  useEffect(() => {
+    const isValid = validate();
+    setValid(isValid);
+  }, [name, email, message]);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_tcksfw9",
+        "template_2hn8dwk",
+        e.target,
+        "pSSLWIzHenmUEv1Yv"
+      )
+      .then(
+        (result) => {
+          alert("Mensagem enviada com sucesso! :)");
+        },
+        (error) => {
+          alert(error.message);
+        }
+      );
+    setName("");
+    setEmail("");
+    setMessage("");
+  };
+
   return (
     <div
       name="contact"
@@ -57,8 +97,7 @@ const Contact = () => {
               entrar em contato comigo através do formulário abaixo:
             </p>
             <form
-              method="POST"
-              action="https://getform.io/f/a699a1b2-f225-434e-b317-1fbbde8e006c"
+              onSubmit={sendEmail}
               className="flex flex-col max-w-[600px] w-full form-contact"
             >
               <input
@@ -66,20 +105,32 @@ const Contact = () => {
                 type="text"
                 placeholder="Informe seu nome"
                 name="name"
+                value={name}
+                style={{ color: "#000000" }}
+                onChange={(e) => setName(e.target.value)}
               />
               <input
                 className="my-4 p-2 bg-[#ccd6f6]"
                 type="email"
                 placeholder="Informe seu e-mail"
                 name="email"
+                value={email}
+                style={{ color: "#000000" }}
+                onChange={(e) => setEmail(e.target.value)}
               />
               <textarea
                 className="bg-[#ccd6f6] p-2"
+                value={message}
                 name="message"
                 rows="4"
                 placeholder="Mensagem"
+                style={{ color: "#000000" }}
+                onChange={(e) => setMessage(e.target.value)}
               ></textarea>
-              <button className="text-white border-2 hover:bg-pink-600 hover:border-pink-600 px-4 py-3 my-8 mx-auto flex items-center">
+              <button
+                disabled={!isValid}
+                className="text-white border-2 hover:bg-pink-600 hover:border-pink-600 px-4 py-3 my-8 mx-auto flex items-center"
+              >
                 Enviar
               </button>
             </form>
